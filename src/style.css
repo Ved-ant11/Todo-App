@@ -1,7 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap');
 
-*{
+* {
   font-family: "Inter", sans-serif;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 body {
@@ -15,52 +18,94 @@ body {
 }
 
 .main-container {
-  width: 300px;
+  width: 350px;
   background-color: #333;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
   text-align: center;
+  animation: fadeIn 0.5s ease-in-out;
 }
 
 h1 {
-  margin: 0;
-  font-size: 1.5rem;
+  font-size: 2rem;
   color: #e3e6e7;
+  margin-bottom: 15px;
+  font-weight: 600;
 }
 
 .input-container {
+  display: flex;
   margin-top: 20px;
 }
 
 .input-container input {
-  width: calc(100% - 50px);
-  padding: 8px;
-  border: none;
-  border-radius: 5px;
-  margin-right: 5px;
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #555;
+  border-radius: 8px;
+  background-color: #444;
+  color: #e3e6e7;
+  transition: all 0.3s ease;
+}
+
+.input-container input:focus {
+  outline: none;
+  border-color: #61dafb;
+  box-shadow: 0 0 6px rgba(97, 218, 251, 0.6);
 }
 
 .input-container button {
-  padding: 8px 10px;
+  padding: 10px 15px;
+  margin-left: 10px;
   border: none;
-  border-radius: 5px;
+  border-radius: 8px;
   background-color: #61dafb;
   color: #333;
   cursor: pointer;
   font-weight: bold;
-  margin-top: 10px;
+  transition: all 0.3s ease;
 }
 
 .input-container button:hover {
   background-color: #21a1f1;
-  transition: 0.3s ease-in-out;
+}
+
+.filter-buttons {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.filter-buttons button {
+  padding: 8px 12px;
+  border: none;
+  border-radius: 8px;
+  background-color: #444;
+  color: #e3e6e7;
+  cursor: pointer;
+  font-weight: bold;
+  margin: 0 5px;
+  transition: background-color 0.3s ease;
+}
+
+.filter-buttons button:hover {
+  background-color: #555;
+}
+
+.filter-buttons .active {
+  background-color: #61dafb;
+  color: #333;
+}
+
+.list-container {
+  margin-top: 25px;
 }
 
 .list-container ul {
   list-style: none;
   padding: 0;
-  margin: 20px 0 0;
+  margin: 0;
 }
 
 .list-container li {
@@ -68,22 +113,13 @@ h1 {
   justify-content: space-between;
   align-items: center;
   background-color: #444;
-  padding: 10px;
-  border-radius: 5px;
-  margin-bottom: 10px;
+  padding: 12px;
+  border-radius: 8px;
+  margin-bottom: 12px;
+  transition: transform 0.2s ease, background-color 0.3s ease;
 }
 
-.list-container li button {
-  padding: 5px 10px;
-  border: none;
-  border-radius: 5px;
-  background-color: #e74c3c;
-  color: white;
-  cursor: pointer;
-  transition: 0.3s ease-in-out;
+.list-container li:hover {
+  transform: translateY(-2px);
+  
 }
-
-.list-container li button:hover {
-  background-color: #c0392b;
-}
-
